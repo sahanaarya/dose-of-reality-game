@@ -1,0 +1,79 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-header{
+  display: flex;
+  justify-content: center;
+}
+
+.tv-logo{
+  height: 200px;
+  width: 300px;
+  margin-top: 0px;
+}
+
+h1{
+  font-family: 'Lobster', cursive;
+  font-size: 100px;
+  margin-top: 50px;
+}
+
+#start-button{
+  border: 2px solid white;
+  background: white;
+  padding: .25em 0;
+  width: 400px;
+  height: 100px;
+  border-radius: 250px;
+  margin-top: 75px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+body{
+  background-color: lightsteelblue;
+}
+
+form{
+  width: 50%;
+  margin: 50px auto;
+}
+
+.prompt, .question{
+  padding-bottom: 20px;
+  border-radius: 25px;
+  background-color: white;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.result{
+  text-align: center;
+  background-color: white;
+  padding: 15px;
+  width: 50%;
+  margin: 20px auto;
+  display: block;
+  border: solid black 1px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  animation: stretch 1.5s ease-out 0s alternate none running;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(.3);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
