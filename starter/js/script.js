@@ -2,6 +2,9 @@
 console.log('JS Loaded');
 
 var name;
+var team;
+var dramaLevel;
+var design;
 
 
 $('.name-section').hide();
@@ -61,9 +64,8 @@ $('.name-form').on('submit',function(e){
   $('.drama-section label').text(`Nice to meet you, ${name}. Hmmm... on a scale of 1-5 (1 being the least amount of drama and 5 being the most amount of drama), how much drama are you in the mood for today?`);
 });
 
-$('.drama-form').on('submit',function(e){
-  e.preventDefault();
-  var dramaLevel = $('#drama-input').val();
+$('.number').on('click',function(){
+  dramaLevel = $(this).html();
   if(dramaLevel<3){
     $('.celeb-apprentice-section').fadeIn('slow');
   } else if(dramaLevel==3){
@@ -73,52 +75,39 @@ $('.drama-form').on('submit',function(e){
   }
 });
 
-$('.celeb-apprentice-form').on('submit',function(e){
-  e.preventDefault();
-  team = $('#celeb-apprentice-input').val().toLowerCase();
-  if(team=='red'){
-    $('.red-prompt').fadeIn('slow');
-    $('.red-section').fadeIn('slow');
-  } else if(team == 'blue'){
-    $('.blue-prompt').fadeIn('slow');
-    $('.blue-section').fadeIn('slow');
-  } else{
-    alert('Please enter a valid input');
-  }
+$('.color').on('click', function(){
+    team = $(this).html().toLowerCase();
+    if(team=='red'){
+      $('.red-prompt').fadeIn('slow');
+      $('.red-section').fadeIn('slow');
+    } else{
+      $('.blue-prompt').fadeIn('slow');
+      $('.blue-section').fadeIn('slow');
+    }
 });
 
-$('.red-form').on('submit',function(e){
-  e.preventDefault();
-  var design = $('#red-input').val().toLowerCase();
-  console.log(design);
+$('.design').on('click',function(){
+  design = $(this).html().toLowerCase();
   if(design =='minimalist'){
     $('.minimalist-prompt').fadeIn('slow');
   } else if(design == 'modern'){
     $('.modern-prompt').fadeIn('slow');
-  } else if(design == 'avant-garde'){
+  } else {
     $('.avant-garde-prompt').fadeIn('slow');
-  } else{
-    alert('Please enter a valid input');
   }
 });
 
-
-$('.blue-form').on('submit',function(e){
-  e.preventDefault();
-  var burger = $('#blue-input').val().toLowerCase();
-  console.log(burger);
+$('.burger').on('click',function(){
+  burger = $(this).html().toLowerCase();
   if(burger =='bougie'){
     $('.bougie-prompt').fadeIn('slow');
-  } else if(burger =='spicy'){
-    $('.spicy-prompt').fadeIn('slow');
   } else{
-    alert('Please enter a valid input');
+    $('.spicy-prompt').fadeIn('slow');
   }
-});
+})
 
-$('.kardashian-form').on('submit',function(e){
-  e.preventDefault();
-  var sister = $('#kardashian-input').val().toLowerCase();
+$('.sister').on('click',function(){
+  sister = $(this).html().toLowerCase();
   if(sister == 'kim'){
     $('.kim-section').fadeIn('slow');
   } else if(sister == 'khloe'){

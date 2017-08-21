@@ -7,7 +7,10 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-touch-fullscreen" content="yes" />
   <link href="https://fonts.googleapis.com/css?family=Lobster|Raleway" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/style.css" media="screen" />
 </head>
 <body>
@@ -29,7 +32,17 @@
   <form class = "drama-form">
     <div class="drama-section">
       <label class = "question"></label>
-      <input type="text" class="form-control" id="drama-input" placeholder="Enter Drama Level">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" id="team-dropdown" type="button" data-toggle="dropdown">Drama Level
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a class="number" href="#">1</a></li>
+          <li><a class="number" href="#">2</a></li>
+          <li><a class="number" href="#">3</a></li>
+          <li><a class="number" href="#">4</a></li>
+          <li><a class="number" href="#">5</a></li>
+        </ul>
+      </div>
     </div>
   </form>
 
@@ -43,7 +56,14 @@
   <form class = "celeb-apprentice-form">
     <div class="celeb-apprentice-section">
       <label class = "question">Ooh, not in the mood for much drama today, are we? No worries, I hope you're in the mood for some challenges though. Let's get started. Choose a team - Blue or Red?</label>
-      <input type="text" class="form-control" id="celeb-apprentice-input" placeholder="Blue/Red">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" id="team-dropdown" type="button" data-toggle="dropdown">Options
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a class="color" href="#">Blue</a></li>
+          <li><a class="color" href="#">Red</a></li>
+        </ul>
+      </div>
     </div>
   </form>
 
@@ -53,7 +73,15 @@
     </div>
     <div class="red-section">
       <label class = "question">So your project manager Ashton has proposed that you guys create either a minimalist logo, modern retro logo, or a bold avant-garde logo. Which one should you guys go with? (minimalist/modern/avant-garde)</label>
-      <input type="text" class="form-control" id="red-input" placeholder="Minimalist/Modern/Avant-garde">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" id="team-dropdown" type="button" data-toggle="dropdown">Design Ideas
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a class="design" href="#">Minimalist</a></li>
+          <li><a class="design" href="#">Modern</a></li>
+          <li><a class="design" href="#">Avant-Garde</a></li>
+        </ul>
+      </div>
     </div>
   </form>
 
@@ -63,7 +91,14 @@
     </div>
     <div class="blue-section">
       <label class = "question"> So your project manager Jay Z has proposed that you guys create either the world's spiciest burger or a bougie burger made with truffles and gold flakes. Which one type of burger should you guys go with? (bougie/spicy) </label>
-      <input type="text" class="form-control" id="blue-input" placeholder="Bougie/Spicy">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" id="team-dropdown" type="button" data-toggle="dropdown"> Options
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a class="burger" href="#">Bougie</a></li>
+          <li><a class="burger" href="#">Spicy</a></li>
+        </ul>
+      </div>
     </div>
   </form>
 
@@ -91,7 +126,15 @@
   <form class = "kardashian-form">
     <div class="kardashian-section">
       <label class = "question">So you want a happy medium, huh? Well, congratulations - you are now have a role in Keeping Up With the Kardashians! In this week's episode you will be featured as the BFF of one of the sisters. Which sister will it be?(Kourtney/Kim/Khloe)</label>
-      <input type="text" class="form-control" id="kardashian-input" placeholder="Kourtney/Kim/Khloe">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" id="team-dropdown" type="button" data-toggle="dropdown"> Options
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a class="sister" href="#">Kourtney</a></li>
+          <li><a class="sister" href="#">Kim</a></li>
+          <li><a class="sister" href="#">Khloe</a></li>
+        </ul>
+      </div>
     </div>
   </form>
 
