@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dose of Reality</title>
+  <title>A Dose of Reality</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-touch-fullscreen" content="yes" />
@@ -13,15 +13,17 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/style.css" media="screen" />
 </head>
-<body>
-  <div class="page-header">
-    <img class = "tv-logo" src="http://diysolarpanelsv.com/images/tv-clip-art-24.png" alt="tv" />
-    <h1> Dose of Reality </h1>
-  </div>
-  <div class = "container">
-    <button class = "btn btn-default" id="start-button"> Click Me </button>
-  </div>
 
+<div class="page-header">
+  <img class = "tv-logo" src='http://diysolarpanelsv.com/images/tv-clip-art-24.png' alt="tv" />
+  <h1> A Dose of Reality </h1>
+</div>
+<div class = "content">
+<div class = "container">
+  <button class = "btn btn-default" id="start-button"> Click Me </button>
+</div>
+
+<body>
   <form class = "name-form">
     <div class="name-section">
       <label class = "question">What is your name?</label>
@@ -68,6 +70,7 @@
   </form>
 
   <form class = "red-form">
+    <img class = "mtv" src="https://upload.wikimedia.org/wikipedia/en/2/2b/Mtv-vma-2016-logo.png" alt="mtv logo" />
     <div class="red-prompt">
       <label class = "prompt">Great choice! Welcome to Celebrity Apprentice. The following stars are members of your team: Khloe Kardashian, Tom Brady, and Ashton Kutcher. Your task today is to design a new logo for the MTV VMA's.</label>
     </div>
@@ -86,6 +89,7 @@
   </form>
 
   <form class = "blue-form">
+    <img class = "shake-shack" src="https://media0.giphy.com/media/O38MGj6hMuy6k/200.webp#2-grid1" alt="shake shack" />
     <div class="blue-prompt">
       <label class = "prompt"> Great choice! Welcome to Celebrity Apprentice. The following stars are members of your team: Lady Gaga, LeBron James, Jay Z. Your task today is to create a new burger to be featured on the Shake Shack menu.</label>
     </div>
@@ -115,7 +119,7 @@
     </div>
 
     <div class="bougie-prompt">
-      <label class = "result"> Alrightttt, I see you, Blue Team. The Bougie Burger was a success! Such a success that Shake Shack has decided to make the Bougie Burger a permanent feature on their menu. Blue Team wins! </label>
+      <label class = "result"> The Bougie Burger was a success! Such a success that Shake Shack has decided to make the Bougie Burger a permanent feature on their menu. Blue Team wins! </label>
     </div>
 
     <div class="spicy-prompt">
@@ -139,9 +143,18 @@
   </form>
 
   <form class = "kim-form">
+    <img class = "kim-face" src="https://media0.giphy.com/media/6S6xg87M00bS/200.webp#37-grid1" alt="" />
     <div class="kim-section">
       <label class = "question">Kim needs help coming up with an idea for a new collection of Kimojis. So far, she has three ideas in mind and is relying on you to select one. The options are 3D kimojis, kimye kimojis, and holographic kimojis. Which one will you pick?(3D/kimye/holographic)</label>
-      <input type="text" class="form-control" id="kim-input" placeholder="">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" id="team-dropdown" type="button" data-toggle="dropdown"> Options
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a class="kimoji" href="#">3D</a></li>
+          <li><a class="kimoji" href="#">Kimye</a></li>
+          <li><a class="kimoji" href="#">Holographic</a></li>
+        </ul>
+      </div>
     </div>
   </form>
 
@@ -158,9 +171,18 @@
   </div>
 
   <form class = "khloe-form">
+    <img class="khloe-gif" src="http://i.imgur.com/cW21Be5.gif" alt="" />
     <div class="khloe-section">
       <label class = "question">Arguably, the most fun and down-to-earth sister, Khloe is excited to have you featured on the show! For the first order of business, Khloe needs your help choosing which celebrity to interview on her talk show 'Kocktails with Khloe'. She has narrowed her list down to a few famous Kardashian exes: Blac Chyna, Kris Humphries, and Tyga. Who should she choose to interview? (Chyna/Kris/Tyga)</label>
-      <input type="text" class="form-control" id="khloe-input" placeholder="">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" id="team-dropdown" type="button" data-toggle="dropdown"> Options
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a class="guest" href="#">Chyna</a></li>
+          <li><a class="guest" href="#">Kris</a></li>
+          <li><a class="guest" href="#">Tyga</a></li>
+        </ul>
+      </div>
     </div>
   </form>
 
@@ -177,9 +199,18 @@
   </div>
 
   <form class = "kourtney-form">
+    <img class = "kourt-kit-kat" src="https://media.giphy.com/media/vrUct09vDPrCE/giphy.gif" alt="kourtney" />
     <div class="kourtney-section">
       <label class = "question">Have you seen that viral video of Kourtney teaching the world how to eat a Kit-Kat? Well, it looks like she is making a sequel but needs to choose another type of food. So far, she is considering either Oreos, Pop Tarts, or Reese's Peanut Butter cups. Which one should she feature in her next video? (Oreos/Pop Tarts/Reese's)</label>
-      <input type="text" class="form-control" id="kourtney-input" placeholder="">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" id="team-dropdown" type="button" data-toggle="dropdown"> Options
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a class="food" href="#">Oreos</a></li>
+          <li><a class="food" href="#">Pop Tarts</a></li>
+          <li><a class="food" href="#">Reese's</a></li>
+        </ul>
+      </div>
     </div>
   </form>
 
@@ -192,16 +223,34 @@
   </div>
 
   <form class = "jersey-shore-form">
+    <img class = "js-logo" src="https://fanart.tv/fanart/tv/127351/hdtvlogo/jersey-shore-5144657d26a4c.png" alt="jersey shore" />
     <div class="jersey-shore-section">
       <label class = "question">We're definitely turning up the drama today for you! Congratulations, you are now officially the newest cast member of the Jersey Shore. In the upcoming episode, you will be introduced as the BFF of one of the current castmates. Which castmate will you pick? Your choices are Snooki, JWoww, and The Situation. Which one will you pick? (Snooki/JWoww/Situation)</label>
-      <input type="text" class="form-control" id="jersey-shore-input" placeholder="Snooki/JWoww/Situation">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" id="team-dropdown" type="button" data-toggle="dropdown"> Options
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a class="guido" href="#">Snooki</a></li>
+          <li><a class="guido" href="#">JWoww</a></li>
+          <li><a class="guido" href="#">Situation</a></li>
+        </ul>
+      </div>
     </div>
   </form>
 
   <form class = "snooki-form">
+    <img class = "snooki-gif" src="https://media0.giphy.com/media/xTiTnjwD1522I72s0M/giphy.gif" alt="snooki" />
     <div class="snooki-section">
       <label class = "question">Bold move. On your first day of taping the show, Snooki went on a wild adventure and found herself in jail. Your options are to: bail her out, let her learn her lesson, or point and laugh. What will you do? (bail/lesson/laugh)</label>
-      <input type="text" class="form-control" id="snooki-input" placeholder="">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" id="team-dropdown" type="button" data-toggle="dropdown"> Options
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a class="choice" href="#">Bail</a></li>
+          <li><a class="choice" href="#">Lesson</a></li>
+          <li><a class="choice" href="#">Laugh</a></li>
+        </ul>
+      </div>
     </div>
   </form>
 
@@ -218,9 +267,18 @@
   </div>
 
   <form class = "jwoww-form">
+    <img class = "jwoww-gif" src="https://media2.giphy.com/media/3YW29nSs98jZu/giphy.gif" alt="JWoww" />
     <div class="jwoww-section">
       <label class = "question">So, I'm gonna let you in on a little secret... it turns out that JWoww is actually the brains behind the whole show. At the moment, one of her responsibilities is to pick an international destination to shoot the next season. So far, the options are Spain, Bahamas, and Mexico. Which one should she choose? (Spain/Bahamas/Mexico)</label>
-      <input type="text" class="form-control" id="jwoww-input" placeholder="">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" id="team-dropdown" type="button" data-toggle="dropdown"> Options
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a class="destination" href="#">Spain</a></li>
+          <li><a class="destination" href="#">Bahamas</a></li>
+          <li><a class="destination" href="#">Mexico</a></li>
+        </ul>
+      </div>
     </div>
   </form>
 
@@ -238,9 +296,18 @@
 
 
   <form class = "mike-form">
+    <img class = "situation-gif" src="https://media2.giphy.com/media/SS34w9KjgFWEg/giphy.gif" alt="The Situation" />
     <div class="mike-section">
       <label class = "question"> So 'The Situation' has a brilliant idea to add one more letter to the famous Jersey Shore Acronym 'GTL', and he needs your help. What letter should be added on? The options are P for Party, C for Chill, and W for Work. Which one should he pick? (P/C/W)</label>
-      <input type="text" class="form-control" id="mike-input" placeholder="">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" id="team-dropdown" type="button" data-toggle="dropdown"> Options
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a class="letter" href="#">P</a></li>
+          <li><a class="letter" href="#">C</a></li>
+          <li><a class="letter" href="#">W</a></li>
+        </ul>
+      </div>
     </div>
   </form>
 
@@ -251,7 +318,7 @@
   <div class="c-w-prompt">
     <label class = "result"> Eh, unfortunately the new extended acronym didn't successfully catch on, so the Jersey Shore crew is reverting back to the OG catchphrase "GTL". Better luck next time! </label>
   </div>
-
+</div>
 
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
