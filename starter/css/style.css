@@ -82,6 +82,11 @@ form{
   flex-direction: column;
 }
 
+.question-form{
+  display: flex;
+  flex-direction: column;
+}
+
 .mtv{
   height: 120px;
   width: 120px;
