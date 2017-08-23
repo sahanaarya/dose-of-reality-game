@@ -1,17 +1,28 @@
 // put code here!
 console.log('JS Loaded');
 
-var name;
+var name = "Placeholder";
+
+var $bodyHeight = $('body').height();
 
 $('.name-section').hide();
 
 var dramaObject = {
-  question: `Nice to meet you, ${name}. Hmmm... on a scale of 1-5 (1 being the least amount of drama and 5 being the most amount of drama), how much drama are you in the mood for today?`,
   formClass:"drama-form",
   divClass: "drama-section",
   listItems: [1,2,3,4,5],
   dropdownClass: "number"
 };
+
+function nameDramaObject(){
+  dramaObject.question = `Nice to meet you, ${name}. Hmmm... on a scale of 1-5 (1 being the least amount of drama and 5 being the most amount of drama), how much drama are you in the mood for today?`;
+}
+
+function updateBodyHeight(){
+  $bodyHeight = $('body').height();
+  console.log($bodyHeight);
+  $('html, body').stop().animate({scrollTop: $bodyHeight}, 1000);
+}
 
 var celebApprenticeObject = {
   question: "Ooh, not in the mood for much drama today, are we? No worries, I hope you're in the mood for some challenges though. Let's get started. Choose a team - Blue or Red?",
@@ -61,23 +72,28 @@ var blueObject = {
 }
 
 var minimalistObject = {
-  text: "Ooh you are really not in the mood for drama today, huh? Minimalist designs are trendy but the MTV executives believe that in order to successfully market a music awards show to millenials, bolder is better. Nice try, but the Red Team must take an L :("
+  text: "Ooh you are really not in the mood for drama today, huh? Minimalist designs are trendy but the MTV executives believe that in order to successfully market a music awards show to millenials, bolder is better. Nice try, though!",
+  points: 3
 }
 
 var modernObject = {
-  text: "Ooh you are really not in the mood for drama today, huh? Minimalist designs are trendy but the MTV executives believe that in order to successfully market a music awards show to millenials, bolder is better. Nice try, but the Red Team must take an L :("
+  text: "Ooh you are really not in the mood for drama today, huh? Minimalist designs are trendy but the MTV executives believe that in order to successfully market a music awards show to millenials, bolder is better. Nice try, though!",
+  points: 2
 }
 
 var avantGardeObject = {
-  text: "Great choice! When it come to marketing the MTV VMAs, bolder is BETTER. It is a win for the Red Team!"
+  text: "Great choice! When it come to marketing the MTV VMAs, bolder is BETTER. It is a win for the Red Team!",
+  points: 5
 }
 
 var bougieObject = {
-  text: "The Bougie Burger was a success! Such a success that Shake Shack has decided to make the Bougie Burger a permanent feature on their menu. Blue Team wins!"
+  text: "The Bougie Burger was a success! Such a success that Shake Shack has decided to make the Bougie Burger a permanent feature on their menu. Blue Team wins!",
+  points: 5
 }
 
 var spicyObject = {
-  text: "Oh no :( You created the burger with good intentions, but unfortunately, the burger led to way too many health liabilities and went viral on Buzzfeed for this reason. Looks like the Blue Team took an L this time. :/"
+  text: "Oh no :( You created the burger with good intentions, but unfortunately, the burger led to way too many health liabilities and went viral on Buzzfeed for this reason. Looks like the Blue Team took an L this time. :/",
+  points: 1
 }
 
 var kimObject = {
@@ -91,15 +107,18 @@ var kimObject = {
 }
 
 var threedObject = {
-  text: "Congrats! The 3D Kimojis were a success. In fact the Kimoji app developers are now working on rolling out a collection of 4D Kimojis due to the 3D collection's enormous success. Plus, you get a cut of the profits. Cha-ching!"
+  text: "Congrats! The 3D Kimojis were a success. In fact the Kimoji app developers are now working on rolling out a collection of 4D Kimojis due to the 3D collection's enormous success. Plus, you get a cut of the profits. Cha-ching!",
+  points: 5
 }
 
 var kimyeObject = {
-  text: "Ehh, it looks like the public is over the Kimye hype, and the new collection did not perform as well as you expected. Unfortunately, it looks like this footage will not be featured on the show - sorry! :("
+  text: "Ehh, it looks like the public is over the Kimye hype, and the new collection did not perform as well as you expected. Unfortunately, it looks like this footage will not be featured on the show - sorry! :(",
+  points: 2
 }
 
 var holographicObject = {
-  text: "Awesome choice. News of Holographic Kimojis went viral. In fact, you played such an instrumental role in the success of the collection, that they have decided to feature you in the next collection of Kimojis. Congrats on your big break!"
+  text: "Awesome choice. News of Holographic Kimojis went viral. In fact, you played such an instrumental role in the success of the collection, that they have decided to feature you in the next collection of Kimojis. Congrats on your big break!",
+  points: 5
 }
 
 var khloeObject = {
@@ -108,20 +127,23 @@ var khloeObject = {
   divClass: "khloe-section",
   listItems: ["Chyna","Kris","Tyga"],
   dropdownClass: "guest",
-  image: 'images.khloe.gif',
+  image: 'images/khloe.gif',
   imageClass: 'khloe-gif'
 }
 
 var chynaObject = {
-  text:"Ooh yes... looks like you found a way to turn up the drama! Khloe's interview with Chyna was arguably the most successful episode of Kocktails with Khloe. The show has never been more popular and has been renewed for another season. Congrats!!"
+  text:"Ooh yes... looks like you found a way to turn up the drama! Khloe's interview with Chyna was arguably the most successful episode of Kocktails with Khloe. The show has never been more popular and has been renewed for another season. Congrats!!",
+  points: 5
 }
 
 var krisObject = {
-  text: "It looks like the public is over Kim's '72-day marriage'. Fewer people chose to tune into the show and the show suffered poor ratings. It's up to you to find a way for Khloe to make a comeback!!"
+  text: "It looks like the public is over Kim's '72-day marriage'. Fewer people chose to tune into the show and the show suffered poor ratings. It's up to you to find a way for Khloe to make a comeback!!",
+  points: 1
 }
 
 var tygaObject = {
-  text: "Tyga.... really? Turns out that Kylie got word of the decision to interview Tyga and is refusing to speak to Khloe :/ It's up to you to patch things up!"
+  text: "Tyga.... really? Turns out that Kylie got word of the decision to interview Tyga and is refusing to speak to Khloe :/ It's up to you to patch things up!",
+  points: 0
 }
 
 var kourtneyObject = {
@@ -135,11 +157,13 @@ var kourtneyObject = {
 }
 
 var oreosReesesObject = {
-  text: "Uh oh, it looks like your choice of food was too controversial. Turns out that people do not want instruction on how to eat their favorite childhood sweets. For this reason, there has actually been an increase in the number of people unsubscribing from Kourtney's app. :("
+  text: "Uh oh, it looks like your choice of food was too controversial. Turns out that people do not want instruction on how to eat their favorite childhood sweets. For this reason, there has actually been an increase in the number of people unsubscribing from Kourtney's app. :(",
+  points: 0
 }
 
 var poptartsObject = {
-  text: "Not a bad choice! In fact, you had the foresight to take it one step further and get the video sponsored by the creators of Pop Tarts. Your brilliance will be rewarded by a share of profits from this soon-to-be viral video. Congrats!!"
+  text: "Not a bad choice! In fact, you had the foresight to take it one step further and get the video sponsored by the creators of Pop Tarts. Your brilliance will be rewarded by a share of profits from this soon-to-be viral video. Congrats!!",
+  points: 5
 }
 
 var snookiObject = {
@@ -153,15 +177,18 @@ var snookiObject = {
 }
 
 var bailObject = {
-  text: "You are a kind soul. Unfortunately, Snooki didn't learn her lesson and ended up in jail the very next day. I guess now it's time to show some tough love."
+  text: "You are a kind soul. Unfortunately, Snooki didn't learn her lesson and ended up in jail the very next day. I guess now it's time to show some tough love.",
+  points: 3
 }
 
 var lessonObject = {
-  text: "Solid choice. However, somehow Snooki managed to escape from jail and is angry at you for not bailing her out when you had the chance. I'd watch my back if I were you...."
+  text: "Solid choice. However, somehow Snooki managed to escape from jail and is angry at you for not bailing her out when you had the chance. I'd watch my back if I were you....",
+  points: 2
 }
 
 var laughObject = {
-  text: "LOL. You win, game over."
+  text: "LOL. You win, game over.",
+  points: 6
 }
 
 var jwowwObject = {
@@ -175,15 +202,18 @@ var jwowwObject = {
 }
 
 var spainObject = {
-  text: "Good choice, but the rest of the cast is not too psyched about it... In fact, on the first day of shooting, they decide to ditch and catch a plane to Italy instead. It's up to you to hunt them down and bring them back to the shooting location!"
+  text: "Good choice, but the rest of the cast is not too psyched about it... In fact, on the first day of shooting, they decide to ditch and catch a plane to Italy instead. It's up to you to hunt them down and bring them back to the shooting location!",
+  points: 3
 }
 
 var bahamasObject = {
-  text: "Good choice, but the rest of the cast is not too psyched about it... In fact, on the first day of shooting, they decide to ditch and catch a plane to Mexico instead. It's up to you to hunt them down and bring them back to the shooting location!"
+  text: "Good choice, but the rest of the cast is not too psyched about it... In fact, on the first day of shooting, they decide to ditch and catch a plane to Mexico instead. It's up to you to hunt them down and bring them back to the shooting location!",
+  points: 3
 }
 
 var mexicoObject = {
-  text: "Perfect choice! The new season was a hit and they want to bring you on board as a full-time location consultant. Get psyched because it pays $200K/year. Cha ching!"
+  text: "Perfect choice! The new season was a hit and they want to bring you on board as a full-time location consultant. Get psyched because it pays $200K/year. Cha ching!",
+  points: 5
 }
 
 var mikeObject = {
@@ -197,15 +227,18 @@ var mikeObject = {
 }
 
 var pObject = {
-  text: "You nailed it! 'GTL' is now 'GTLP' (Gym, Tan, Laundry, Party) and a trending hashtag on Twitter. Nice job!"
+  text: "You nailed it! 'GTL' is now 'GTLP' (Gym, Tan, Laundry, Party) and a trending hashtag on Twitter. Nice job!",
+  points: 5
 }
 
 var cwObject = {
-  text: "Eh, unfortunately the new extended acronym didn't successfully catch on, so the Jersey Shore crew is reverting back to the OG catchphrase 'GTL'. Better luck next time!"
+  text: "Eh, unfortunately the new extended acronym didn't successfully catch on, so the Jersey Shore crew is reverting back to the OG catchphrase 'GTL'. Better luck next time!",
+  points: 3
 }
 
 function createForm(object){
   var $formTag = $('<form>').addClass(object.formClass)
+  .append($('<div>').addClass('image-section'))
   .append($('<img>').attr('src', object.image).addClass(object.imageClass))
   .append($('<label>').addClass(object.labelClass).text(object.promptStatement))
   .append($('<div>').addClass(object.divClass)
@@ -221,13 +254,18 @@ function createForm(object){
     $ul.append($li);
     $dropdown.append($ul);
   });
+
   $formTag.append($dropdown);
-  $('body').append($formTag);
+  $('.content').append($formTag);
+  updateBodyHeight();
 };
 
 function createPrompt(promptObject){
   $labelTag = $('<label>').text(promptObject.text).addClass('result');
-  $('body').append($labelTag);
+  $pointsMessage = $('<label>').text(`You win ${promptObject.points} point(s).`).addClass('points');
+  $('.content').append($labelTag);
+  $($labelTag).append($pointsMessage);
+  updateBodyHeight();
 }
 
 $('#start-button').on('click', function(){
@@ -236,7 +274,9 @@ $('#start-button').on('click', function(){
 
 $('.name-form').on('submit',function(e){
   e.preventDefault();
+  name = $('#name-input').val();
   console.log(name);
+  nameDramaObject();
   createForm(dramaObject);
 });
 
@@ -364,7 +404,3 @@ $('body').on('click',".kimoji",function(){
       createPrompt(cwObject);
     }
   });
-
-  $('#adventure-lab').on('click', function(){
-    $('.content').hide();
-  })

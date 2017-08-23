@@ -77,6 +77,19 @@ form{
   animation: stretch 1.5s ease-out 0s alternate none running;
 }
 
+.points{
+  text-align: center;
+  background-color: #c9d7ed;
+  padding: 15px;
+  width: 50%;
+  margin: 20px auto;
+  display: block;
+  border: solid black 1px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  animation: stretch 1.5s ease-out 0s alternate none running;
+}
+
 .red-form, .blue-form, .kim-form, .khloe-form, .kourtney-form, .jersey-shore-form, .snooki-form, .mike-form, .jwoww-form{
   display: flex;
   flex-direction: column;
