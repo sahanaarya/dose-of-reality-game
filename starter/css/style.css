@@ -1,7 +1,11 @@
-.container{
+.container, .button{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.pagewrap{
+  position: absolute;
 }
 
 .page-header{
@@ -41,6 +45,22 @@ h1:before {
   margin-top: 75px;
   font-family: 'Raleway', sans-serif;
   font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+}
+
+#adventure, #new-user{
+  border: 2px solid black;
+  background: white;
+  padding: .25em 0;
+  width: 400px;
+  height: 100px;
+  border-radius: 250px;
+  margin: 75px 10px;
+  margin-top: 75px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
   font-weight: bold;
   text-transform: uppercase;
 }

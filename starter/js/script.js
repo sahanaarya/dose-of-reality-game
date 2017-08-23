@@ -5,6 +5,10 @@ var name = "Placeholder";
 
 var $bodyHeight = $('body').height();
 
+var originalHtml = document.body.innerHTML;
+
+var score = 0;
+
 $('.name-section').hide();
 
 var dramaObject = {
@@ -14,13 +18,32 @@ var dramaObject = {
   dropdownClass: "number"
 };
 
+var $buttonDiv = $('<div>').addClass('button');
+
+var $adventureButton = $('<button>').attr('id','adventure').attr('type','button').text("Click to go on another adventure!");
+
+var $newUserButton = $('<button>').attr('id','new-user').attr('type','button').text("New User Click Here");
+
+$('.content').on('click',"#adventure",function(){
+  $('.content').empty();
+  $('.name-form').hide();
+  createForm(dramaObject);
+});
+
+$('.content').on('click','#new-user',function(){
+  $('.content').empty();
+  $('.name-form').fadeIn('slow');
+  $('#name-input').val('');
+  score = 0;
+})
+
+
 function nameDramaObject(){
   dramaObject.question = `Nice to meet you, ${name}. Hmmm... on a scale of 1-5 (1 being the least amount of drama and 5 being the most amount of drama), how much drama are you in the mood for today?`;
 }
 
 function updateBodyHeight(){
   $bodyHeight = $('body').height();
-  console.log($bodyHeight);
   $('html, body').stop().animate({scrollTop: $bodyHeight}, 1000);
 }
 
@@ -266,9 +289,15 @@ function createPrompt(promptObject){
   $('.content').append($labelTag);
   $($labelTag).append($pointsMessage);
   updateBodyHeight();
+  $('.content').append($buttonDiv);
+  $buttonDiv.append($adventureButton);
+  $buttonDiv.append($newUserButton);
+  score = score + promptObject.points;
+  console.log(score);
 }
 
-$('#start-button').on('click', function(){
+$('.container').on('click',"#start-button", function(){
+  console.log('hey');
   $('.name-section').fadeIn('slow');
 });
 
@@ -314,9 +343,9 @@ $('body').on('click','.design',function(){
 $('body').on('click',".burger",function(){
   burger = $(this).html().toLowerCase();
   if(burger =='bougie'){
-    createPrompt('bougieObject');
+    createPrompt(bougieObject);
   } else{
-    createPrompt('spicyObject');
+    createPrompt(spicyObject);
   }
 })
 
