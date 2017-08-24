@@ -1,6 +1,12 @@
 // put code here!
 console.log('JS Loaded');
 
+// Hide name input section and user profile icon on page load
+$('.name-section').hide();
+$('.user-icon').hide();
+
+// Create and initialize variables
+
 var name = "Placeholder";
 
 var $bodyHeight = $('body').height();
@@ -9,12 +15,10 @@ var originalHtml = document.body.innerHTML;
 
 var score = 0;
 
-$('.name-section').hide();
-
 var dramaObject = {
   formClass:"drama-form",
   divClass: "drama-section",
-  listItems: [1,2,3,4,5],
+  listItems: [1,2,3],
   dropdownClass: "number"
 };
 
@@ -25,31 +29,6 @@ var $scoreDiv = $('.score').html("Score: "+score);
 var $adventureButton = $('<button>').attr('id','adventure').attr('type','button').text("Click to go on another adventure!");
 
 var $newUserButton = $('<button>').attr('id','new-user').attr('type','button').text("New User Click Here");
-
-$('.content').on('click',"#adventure",function(){
-  $('#start-button').hide();
-  $('.content').empty();
-  $('.name-form').hide();
-  createForm(dramaObject);
-});
-
-$('.content').on('click','#new-user',function(){
-  $('.content').empty();
-  $('.name-form').fadeIn('slow');
-  $('#name-input').val('');
-  score = 0;
-  $scoreDiv.html('Score: '+score).css('margin-top','6%');
-})
-
-
-function nameDramaObject(){
-  dramaObject.question = `Nice to meet you, ${name}. Hmmm... on a scale of 1-5 (1 being the least amount of drama and 5 being the most amount of drama), how much drama are you in the mood for today?`;
-}
-
-function updateBodyHeight(){
-  $bodyHeight = $('body').height();
-  $('html, body').stop().animate({scrollTop: $bodyHeight}, 1000);
-}
 
 var celebApprenticeObject = {
   question: "Ooh, not in the mood for much drama today, are we? No worries, I hope you're in the mood for some challenges though. Let's get started. Choose a team - Blue or Red?",
@@ -120,7 +99,7 @@ var bougieObject = {
 
 var spicyObject = {
   text: "Oh no :( You created the burger with good intentions, but unfortunately, the burger led to way too many health liabilities and went viral on Buzzfeed for this reason. Looks like the Blue Team took an L this time. :/",
-  points: -4
+  points: -2
 }
 
 var kimObject = {
@@ -140,7 +119,7 @@ var threedObject = {
 
 var kimyeObject = {
   text: "Ehh, it looks like the public is over the Kimye hype, and the new collection did not perform as well as you expected. Unfortunately, it looks like this footage will not be featured on the show - sorry! :(",
-  points: 2
+  points: -1
 }
 
 var holographicObject = {
@@ -165,12 +144,12 @@ var chynaObject = {
 
 var krisObject = {
   text: "It looks like the public is over Kim's '72-day marriage'. Fewer people chose to tune into the show and the show suffered poor ratings. It's up to you to find a way for Khloe to make a comeback!!",
-  points: 1
+  points: -1
 }
 
 var tygaObject = {
   text: "Tyga.... really? Turns out that Kylie got word of the decision to interview Tyga and is refusing to speak to Khloe :/ It's up to you to patch things up!",
-  points: 0
+  points: -2
 }
 
 var kourtneyObject = {
@@ -185,7 +164,7 @@ var kourtneyObject = {
 
 var oreosReesesObject = {
   text: "Uh oh, it looks like your choice of food was too controversial. Turns out that people do not want instruction on how to eat their favorite childhood sweets. For this reason, there has actually been an increase in the number of people unsubscribing from Kourtney's app. :(",
-  points: 0
+  points: -3
 }
 
 var poptartsObject = {
@@ -205,12 +184,12 @@ var snookiObject = {
 
 var bailObject = {
   text: "You are a kind soul. Unfortunately, Snooki didn't learn her lesson and ended up in jail the very next day. I guess now it's time to show some tough love.",
-  points: 3
+  points: -1
 }
 
 var lessonObject = {
   text: "Solid choice. However, somehow Snooki managed to escape from jail and is angry at you for not bailing her out when you had the chance. I'd watch my back if I were you....",
-  points: 2
+  points: -1
 }
 
 var laughObject = {
@@ -230,12 +209,12 @@ var jwowwObject = {
 
 var spainObject = {
   text: "Good choice, but the rest of the cast is not too psyched about it... In fact, on the first day of shooting, they decide to ditch and catch a plane to Italy instead. It's up to you to hunt them down and bring them back to the shooting location!",
-  points: 3
+  points: -1
 }
 
 var bahamasObject = {
   text: "Good choice, but the rest of the cast is not too psyched about it... In fact, on the first day of shooting, they decide to ditch and catch a plane to Mexico instead. It's up to you to hunt them down and bring them back to the shooting location!",
-  points: 3
+  points: -1
 }
 
 var mexicoObject = {
@@ -260,7 +239,16 @@ var pObject = {
 
 var cwObject = {
   text: "Eh, unfortunately the new extended acronym didn't successfully catch on, so the Jersey Shore crew is reverting back to the OG catchphrase 'GTL'. Better luck next time!",
-  points: 3
+  points: -2
+}
+
+function nameDramaObject(){
+  dramaObject.question = `Nice to meet you, ${name}. Hmmm... on a scale of 1-3 (1 being the least amount of drama and 3 being the most amount of drama), how much drama are you in the mood for today?`;
+}
+
+function updateBodyHeight(){
+  $bodyHeight = $('body').height();
+  $('html, body').stop().animate({scrollTop: $bodyHeight}, 1000);
 }
 
 function createForm(object){
@@ -304,7 +292,26 @@ function createPrompt(promptObject){
 $('.container').on('click',"#start-button", function(){
   console.log('hey');
   $('.name-section').fadeIn('slow');
+  $('#name-input').focus();
 });
+
+$('.content').on('click',"#adventure",function(){
+  $('#start-button').hide();
+  $('.content').empty();
+  $('.name-form').hide();
+  createForm(dramaObject);
+});
+
+$('.content').on('click','#new-user',function(){
+  $('.content').empty();
+  $('.name-form').fadeIn('slow');
+  $('#name-input').val('');
+  $('.user-icon').hide();
+  $('.username').text("");
+  $('#name-input').focus();
+  score = 0;
+  $scoreDiv.html('Score: '+score).css('margin-top','6%');
+})
 
 $('.name-form').on('submit',function(e){
   e.preventDefault();
@@ -312,13 +319,17 @@ $('.name-form').on('submit',function(e){
   console.log(name);
   nameDramaObject();
   createForm(dramaObject);
+  $('.user-icon').fadeIn('slow');
+  $('.username').text(name);
 });
 
 $('body').on('click',".number",function(){
   dramaLevel = $(this).html();
-  if(dramaLevel<3){
+  var nextForm = $(this).closest('form').nextAll('form');
+  nextForm.remove();
+  if(dramaLevel==1){
     createForm(celebApprenticeObject);
-  } else if(dramaLevel==3){
+  } else if(dramaLevel==2){
     createForm(kardashianObject);
   } else{
     createForm(jerseyshoreObject);
@@ -327,6 +338,8 @@ $('body').on('click',".number",function(){
 
 $('body').on('click',".color", function(){
     team = $(this).html().toLowerCase();
+    var nextForm = $(this).closest('form').nextAll('form');
+    nextForm.remove();
     if(team=='red'){
       createForm(redObject);
     } else{
@@ -356,6 +369,8 @@ $('body').on('click',".burger",function(){
 
 $('body').on('click',".sister",function(){
   sister = $(this).html().toLowerCase();
+  var nextForm = $(this).closest('form').nextAll('form');
+  nextForm.remove();
   if(sister == 'kim'){
     createForm(kimObject);
   } else if(sister == 'khloe'){
@@ -399,6 +414,8 @@ $('body').on('click',".kimoji",function(){
 
   $('body').on('click','.guido',function(){
     guido = $(this).html().toLowerCase();
+    var nextForm = $(this).closest('form').nextAll('form');
+    nextForm.remove();
     if(guido == 'snooki'){
       createForm(snookiObject);
     } else if(guido == 'jwoww'){
