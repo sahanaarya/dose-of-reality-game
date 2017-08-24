@@ -20,11 +20,14 @@ var dramaObject = {
 
 var $buttonDiv = $('<div>').addClass('button');
 
+var $scoreDiv = $('.score').html("Score: "+score);
+
 var $adventureButton = $('<button>').attr('id','adventure').attr('type','button').text("Click to go on another adventure!");
 
 var $newUserButton = $('<button>').attr('id','new-user').attr('type','button').text("New User Click Here");
 
 $('.content').on('click',"#adventure",function(){
+  $('#start-button').hide();
   $('.content').empty();
   $('.name-form').hide();
   createForm(dramaObject);
@@ -35,6 +38,7 @@ $('.content').on('click','#new-user',function(){
   $('.name-form').fadeIn('slow');
   $('#name-input').val('');
   score = 0;
+  $scoreDiv.html('Score: '+score).css('margin-top','6%');
 })
 
 
@@ -96,7 +100,7 @@ var blueObject = {
 
 var minimalistObject = {
   text: "Ooh you are really not in the mood for drama today, huh? Minimalist designs are trendy but the MTV executives believe that in order to successfully market a music awards show to millenials, bolder is better. Nice try, though!",
-  points: 3
+  points: 1
 }
 
 var modernObject = {
@@ -116,7 +120,7 @@ var bougieObject = {
 
 var spicyObject = {
   text: "Oh no :( You created the burger with good intentions, but unfortunately, the burger led to way too many health liabilities and went viral on Buzzfeed for this reason. Looks like the Blue Team took an L this time. :/",
-  points: 1
+  points: -4
 }
 
 var kimObject = {
@@ -262,7 +266,7 @@ var cwObject = {
 function createForm(object){
   var $formTag = $('<form>').addClass(object.formClass)
   .append($('<div>').addClass('image-section'))
-  .append($('<img>').attr('src', object.image).addClass(object.imageClass))
+  .append($('<img>').attr('src', object.image).addClass(object.imageClass).addClass('img-responsive'))
   .append($('<label>').addClass(object.labelClass).text(object.promptStatement))
   .append($('<div>').addClass(object.divClass)
   .append($('<label>').addClass('question').text(object.question)));
@@ -285,7 +289,7 @@ function createForm(object){
 
 function createPrompt(promptObject){
   $labelTag = $('<label>').text(promptObject.text).addClass('result');
-  $pointsMessage = $('<label>').text(`You win ${promptObject.points} point(s).`).addClass('points');
+  $pointsMessage = $('<label>').text(`You get ${promptObject.points} point(s).`).addClass('points');
   $('.content').append($labelTag);
   $($labelTag).append($pointsMessage);
   updateBodyHeight();
@@ -294,6 +298,7 @@ function createPrompt(promptObject){
   $buttonDiv.append($newUserButton);
   score = score + promptObject.points;
   console.log(score);
+  $scoreDiv.html('Score: '+score).css('margin-top','6%');
 }
 
 $('.container').on('click',"#start-button", function(){

@@ -4,6 +4,23 @@
   align-items: center;
 }
 
+.score{
+  border: solid black 5px;
+  height: 100px;
+  width: 200px;
+  position: fixed;
+  margin-left: 35%;
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  border-radius: 5%;
+}
+
 .pagewrap{
   position: absolute;
 }
