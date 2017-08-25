@@ -296,14 +296,12 @@ function createPrompt(promptObject){
   $buttonDiv.append($adventureButton);
   $buttonDiv.append($newUserButton);
   score = score + promptObject.points;
-  console.log(score);
   $scoreDiv.html('Score: '+score).css('margin-top','6%');
 }
 
 // Add event listener to the "Start Game" button
 
 $('.container').on('click',"#start-button", function(){
-  console.log('hey');
   $('.name-section').fadeIn('slow');
   $('#name-input').focus();
 });
@@ -335,7 +333,6 @@ $('.content').on('click','#new-user',function(){
 $('.name-form').on('submit',function(e){
   e.preventDefault();
   name = $('#name-input').val();
-  console.log(name);
   nameDramaObject();
   createForm(dramaObject);
   $('.user-icon').fadeIn('slow');
@@ -425,7 +422,6 @@ $('body').on('click',".kimoji",function(){
 
   $('body').on('click',".food",function(){
     food = $(this).html().toLowerCase();
-    console.log(food);
     if(food == 'oreos' || food == "reese's"){
       createPrompt(oreosReesesObject);
     } else{
