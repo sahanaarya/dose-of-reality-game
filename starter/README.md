@@ -1,4 +1,5 @@
 # "A Dose of Reality" Game Description
+##### By Sahana Arya </br>
 
   The "A Dose of Reality" game is a game in which a user makes their Hollywood debut as a guest star of a popular reality TV show. Throughout the game, the user encounters a number of questions, which they must answer in order to make progress on their journey as a reality TV star. The decisions they make along the way influence the rest of their journey and the final outcome. When the user reaches the final outcome, they either win or lose points. Points are kept track of throughout all of the user's journeys, and points are allocated depending on whether the user's decisions contributed or detracted from success of their reality TV show.
 
