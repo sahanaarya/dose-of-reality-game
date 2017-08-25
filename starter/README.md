@@ -30,3 +30,9 @@
 * Google
 * Stack Overflow
 * Peers and Instructors
+
+# Wireframe
+
+![wireframe](images/game_wireframe.jpeg)
+
+**Did not have a chance to implement the leaderboard*
