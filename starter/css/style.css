@@ -31,6 +31,10 @@
   font-family: helvetica;
 }
 
+.name:hover{
+  color: #0c244c;
+}
+
 .clearfix {
   position: fixed;
   bottom: 0;
