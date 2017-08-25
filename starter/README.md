@@ -26,11 +26,16 @@
 * [Javascript](js/main.js)
 * [CSS](css/style.css)
 
+
 # Acknowledgments
 
 * Google
 * Stack Overflow
 * Peers and Instructors
+
+# Trello board
+
+https://trello.com/b/BNTVZB1C/a-dose-of-reality-to-do-board
 
 # Wireframe
 
