@@ -20,11 +20,11 @@
 * Asked new users to provide feedback on bugs they encountered as well any suggestions they had regarding UI and game functionality
 * Used Google Chrome's Audit feature to analyze my webpage
 
-# Stack
+# Files
 
-* HTML
-* Javascript
-* CSS
+* [HTML](index.html)
+* [Javascript](js/main.js)
+* [CSS](css/style.css)
 
 # Acknowledgments
 
