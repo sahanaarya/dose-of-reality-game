@@ -2,6 +2,7 @@
 console.log('JS Loaded');
 
 // Hide name input section and user profile icon on page load
+
 $('.name-section').hide();
 $('.user-icon').hide();
 
@@ -29,6 +30,9 @@ var $scoreDiv = $('.score').html("Score: "+score);
 var $adventureButton = $('<button>').attr('id','adventure').attr('type','button').text("Click to go on another adventure!");
 
 var $newUserButton = $('<button>').attr('id','new-user').attr('type','button').text("New User Click Here");
+
+
+// Create objects whose properties contain information on the various game scenarios
 
 var celebApprenticeObject = {
   question: "Ooh, not in the mood for much drama today, are we? No worries, I hope you're in the mood for some challenges though. Let's get started. Choose a team - Blue or Red?",
@@ -242,14 +246,19 @@ var cwObject = {
   points: -2
 }
 
+// Function to update the drama level question so that it addresses the user by name
+
 function nameDramaObject(){
   dramaObject.question = `Nice to meet you, ${name}. Hmmm... on a scale of 1-3 (1 being the least amount of drama and 3 being the most amount of drama), how much drama are you in the mood for today?`;
 }
 
+// Function to update the body height as content is added for the purpose of auto-scrolling
 function updateBodyHeight(){
   $bodyHeight = $('body').height();
   $('html, body').stop().animate({scrollTop: $bodyHeight}, 1000);
 }
+
+// Function to create HTML elements for game questions
 
 function createForm(object){
   var $formTag = $('<form>').addClass(object.formClass)
@@ -275,6 +284,8 @@ function createForm(object){
   updateBodyHeight();
 };
 
+// Function to create HTML elements for game result prompts
+
 function createPrompt(promptObject){
   $labelTag = $('<label>').text(promptObject.text).addClass('result');
   $pointsMessage = $('<label>').text(`You get ${promptObject.points} point(s).`).addClass('points');
@@ -289,11 +300,15 @@ function createPrompt(promptObject){
   $scoreDiv.html('Score: '+score).css('margin-top','6%');
 }
 
+// Add event listener to the "Start Game" button
+
 $('.container').on('click',"#start-button", function(){
   console.log('hey');
   $('.name-section').fadeIn('slow');
   $('#name-input').focus();
 });
+
+// Add event listener to the "Go on another adventure" button
 
 $('.content').on('click',"#adventure",function(){
   $('#start-button').hide();
@@ -301,6 +316,8 @@ $('.content').on('click',"#adventure",function(){
   $('.name-form').hide();
   createForm(dramaObject);
 });
+
+// Resets game when "New User Click Here" button is clicked
 
 $('.content').on('click','#new-user',function(){
   $('.content').empty();
@@ -313,6 +330,8 @@ $('.content').on('click','#new-user',function(){
   $scoreDiv.html('Score: '+score).css('margin-top','6%');
 })
 
+// When user name is submitted, a user profile is created and the first question is loaded
+
 $('.name-form').on('submit',function(e){
   e.preventDefault();
   name = $('#name-input').val();
@@ -322,6 +341,8 @@ $('.name-form').on('submit',function(e){
   $('.user-icon').fadeIn('slow');
   $('.username').text(name);
 });
+
+// The following functions steer the game and create follow-up questions depending on user selections
 
 $('body').on('click',".number",function(){
   dramaLevel = $(this).html();
